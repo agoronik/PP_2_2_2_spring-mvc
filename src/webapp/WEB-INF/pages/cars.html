@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div>
+    <ul>
+        <li>
+            <a href="/cars?count=1">Get 1 car</a>
+        </li>
+        <li>
+            <a href="/cars?count=2">Get 2 car</a>
+        </li>
+        <li>
+            <a href="/cars?count=3">Get 3 car</a>
+        </li>
+        <li>
+            <a href="/cars?count=4">Get 4 car</a>
+        </li>
+        <li>
+            <a href="/cars?count=5">Get 5 car</a>
+        </li>
+        <li>
+            <a href="/cars">Get ALL car</a>
+        </li>
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Series</th>
+                <th>Color</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            <th:block th:each="car : ${cars}">
+                <tr>
+                    <td th:text="${car.getName()}"></td>
+                    <td th:text="${car.getSeries()}"></td>
+                    <td th:text="${car.getColor()}"></td>
+                    <td th:text="${car.getYear()}"></td>
+                </tr>
+            </th:block>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
